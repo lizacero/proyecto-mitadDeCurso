@@ -1,25 +1,25 @@
-let tablaDoctores = document.getElementById("tabla-doctores")
-let cuerpoTabla = tablaDoctores.querySelector("tbody")
+let tablaPacientes = document.getElementById("tabla-pacientes")
+let cuerpoTabla = document.querySelector("tbody")
 
-const doctoresCookie = JSON.parse(obtenerCookie("doctores"))
+const pacientesCookie = JSON.parse(obtenerCookie("pacientes"))
 
-for (let i = 0; i < doctoresCookie.length; i++) {
-    let doctor = doctoresCookie[i]
+for (let i = 0; i < pacientesCookie.length; i++){
+    let paciente = pacientesCookie[i]
 
     let fila = cuerpoTabla.insertRow()
-    let celdaNombreDoctor = fila.insertCell()
-    let celdaApellidoDoctor = fila.insertCell()
-    let celdaCedulaDoctor = fila.insertCell()
+    let celdaNombrePaciente = fila.insertCell()
+    let celdaApellidoPaciente = fila.insertCell()
+    let celdaCedulaPaciente =  fila.insertCell()
+    let celdaEdad = fila.insertCell()
+    let celdaTelefono = fila.insertCell()
     let celdaEspecialidad = fila.insertCell()
-    let celdaConsultorio = fila.insertCell()
-    let celdaCorreo = fila.insertCell()
 
-    celdaNombreDoctor.textContent = doctor.nombreDoctor
-    celdaApellidoDoctor.textContent = doctor.apellidoDoctor
-    celdaCedulaDoctor.textContent = doctor.cedulaDoctor
-    celdaEspecialidad.textContent = doctor.especialidad
-    celdaConsultorio.textContent = doctor.consultorio
-    celdaCorreo.textContent = doctor.correo
+    celdaNombrePaciente.textContent = paciente.nombrePaciente
+    celdaApellidoPaciente.textContent = paciente.apellidoPaciente
+    celdaCedulaPaciente.textContent = paciente.cedulaPaciente
+    celdaEdad.textContent = paciente.edad
+    celdaTelefono.textContent = paciente.telefono
+    celdaEspecialidad.textContent = paciente.especialidad
 
 }
 
