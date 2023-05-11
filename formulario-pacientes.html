@@ -5,18 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centro Médico Backend</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Centro Médico Backend</h1>
     </header>
     <main>
-        <h2>Registro de pacientes</h2>
-
+        <form>
+            <h2>Registro de pacientes</h2>
+            <label for="nombrePaciente">Nombre</label>
+            <input type="text" name="nombrePaciente" id="nombrePaciente" required>
+            <label for="apellidoPaciente">Apellido</label>
+            <input type="text" name="apellidoPaciente" id="apellidoPaciente" required>
+            <label for="cedulaPaciente">Número de cédula</label>
+            <input type="number" name="cedulaPaciente" id="cedulaPaciente" required>
+            <label for="edad">Edad</label>
+            <input type="number" name="edad" id="edad" required>
+            <label for="telefono">Teléfono</label>
+            <input type="tel" name="telefono" id="telefono">
+            <label for="especialidad">Especialidad requerida</label>
+            <select name="especialidad" id="especialidad">
+                <option value="">Seleccione la especialidad</option>
+                <option value="Medicina general">Medicina general</option>
+                <option value="Cardiología">Cardiología</option>
+                <option value="Medicina interna">Medicina interna</option>
+                <option value="Dermatología">Dermatología</option>
+                <option value="Rehabilitación física">Rehabilitación física</option>
+                <option value="Psicología">Psicología</option>
+                <option value="Odontología">Odontología</option>
+                <option value="Radiología">Radiología</option>
+            </select>
+            <input type="submit" value="Enviar">
+        </form>
         <div>
             <input type="button" id="botonVolver" value="volver">
         </div>
     </main>
+    <script src="formulario-pacientes.js"></script>
     <script src="volver.js"></script>
 </body>
 </html>
