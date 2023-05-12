@@ -12,7 +12,7 @@ formularioDoctores.addEventListener("submit", (event) => {
     guardarCookies(datosMedicos)
     const confirmacion =confirm("¿Desea ver los datos?")
     if(confirmacion){
-        window.location.href = "listado-medicos.html"
+        window.location.href = "listado-doctores.html"
     }else{
         formularioDoctores.reset()
     }
