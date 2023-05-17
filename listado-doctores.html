@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centro Médico Backend</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
     <header>
-        <h1>Centro Médico Backend</h1>
+        <h1 class="animate__animated animate__fadeInRight">Centro Médico Backend</h1>
     </header>
-    <main>
+    <main class="pages">
         <table id="tabla-doctores">
-            <h2>Listado de doctores</h2>
+            <h2 class="animate__animated animate__zoomIn">Listado de doctores</h2>
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -22,6 +23,7 @@
                     <th>Especialidad</th>
                     <th>Consultorio</th>
                     <th>Correo</th>
+                    <th>Pacientes</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,7 +34,7 @@
             <input type="button" id="botonVolver" value="volver">
         </div>
     </main>
-    <script src="listado-doctores.js"></script>
+    <script src="listado-medicos.js"></script>
     <script src="volver.js"></script>
 </body>
 </html>
