@@ -2,6 +2,7 @@ let tablaDoctores = document.getElementById("tabla-doctores")
 let cuerpoTabla = tablaDoctores.querySelector("tbody")
 
 const doctoresCookie = JSON.parse(obtenerCookie("doctores"))
+const pacientesCookie = JSON.parse(obtenerCookie("pacientes") || "[]")
 
 for (let i = 0; i < doctoresCookie.length; i++) {
     let doctor = doctoresCookie[i]
@@ -20,6 +21,19 @@ for (let i = 0; i < doctoresCookie.length; i++) {
     celdaEspecialidad.textContent = doctor.especialidad
     celdaConsultorio.textContent = doctor.consultorio
     celdaCorreo.textContent = doctor.correo
+
+    let pacientesEncontrados = pacientesCookie.filter(paciente => doctor.especialidad === paciente.especialidad)
+    const doctorPaciente = fila.insertCell()
+    if(pacientesEncontrados.length>0){
+        doctorPaciente.innerHTML = `<ul id="pacientes"></ul>`
+        const pacientes = doctorPaciente.querySelector("#pacientes")
+        for (let j=0; j < pacientesEncontrados.length; j++){
+            const pacienteEncontrado = pacientesEncontrados[j]
+            pacientes.innerHTML += `<li>${pacienteEncontrado.nombrePaciente}</li>`
+        }
+    } else {
+        doctorPaciente.textContent = "Sin pacientes"
+    }
 
 }
 

@@ -2,6 +2,7 @@ let tablaPacientes = document.getElementById("tabla-pacientes")
 let cuerpoTabla = document.querySelector("tbody")
 
 const pacientesCookie = JSON.parse(obtenerCookie("pacientes"))
+const doctoresCookie = JSON.parse(obtenerCookie("doctores") || "[]")
 
 for (let i = 0; i < pacientesCookie.length; i++){
     let paciente = pacientesCookie[i]
@@ -21,6 +22,9 @@ for (let i = 0; i < pacientesCookie.length; i++){
     celdaTelefono.textContent = paciente.telefono
     celdaEspecialidad.textContent = paciente.especialidad
 
+    const doctorEspecialidad = doctoresCookie.find(doctor => paciente.especialidad === doctor.especialidad)
+    const celdaDoctorPaciente = fila.insertCell()
+    celdaDoctorPaciente.textContent = doctorEspecialidad ? doctorEspecialidad.nombreDoctor : "Por asignar";
 }
 
 function obtenerCookie(nombre) {
